@@ -1,7 +1,7 @@
-
+require 'pry'
 
 class School
-  attr_accessor :name, :roster, :grade, :student
+  attr_accessor :roster, :grade, :student
 
   def initialize(school)
     @school = school
@@ -18,7 +18,10 @@ class School
   end
 
   def sort
-    @roster[grade][student].sort
+    @roster.each do |grade, student|
+      student.sort!
+    end
+
   end
 
 
