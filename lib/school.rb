@@ -17,11 +17,10 @@ class School
   end
 
   def grade(grade_level)
-    @roster.values_at(grade_level).flatten
+    @roster[grade_level]
   end
 
   def sort
-    @roster = @roster.sort_by { |key| key }.to_h
     @roster.collect do |grade_level, student_arary|
       @roster[grade_level].sort! do |a, b|
         a <=> b
